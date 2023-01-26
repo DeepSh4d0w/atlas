@@ -20,4 +20,4 @@ Eu já tive varias tentativas de fazer um sistema de fichas de personagens e a m
 
 Ainda tenho que decidir pontos importantes como o nome oficial desse projeto ate o momento ele é conhecido internamente como `Sheet Manager`, outra duvida que eu tenho e quando a forma que ela vai ser usada, sera que vale ou não apena transformar de `Sistema de Fichas de Personagem` para apenas `Sistema de Ficas` e englobar fichas de monstros e NPC's, mas a que mais a duvida que mais me pega é quanto ao inventario, ate o momento acho melhor tratar o inventario como outro sistema, já que ele tem muitas validações próprias que merecem uma atenção dedicada a elas, mas talvez isso possa contornado com um sistema provisório mais simples para o inventario, vamos ver como essa situação vai desenrolar no futuro.
 
-(veja mais detalhes desse projeto aqui)[https://github.com/DeepSh4d0w/adventure_assistant/tree/main/src/sheet_manager]
+[veja mais detalhes desse projeto aqui](https://github.com/DeepSh4d0w/adventure_assistant/tree/main/src/sheet_manager)
