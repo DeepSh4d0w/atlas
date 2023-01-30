@@ -1,4 +1,4 @@
-# Sheet Manager
+# Hermes
 
 Autor: Deepsh.
 
@@ -8,7 +8,7 @@ Inicio: 25/01/2023.
 
 ## 🖊 Descrição
 
-O `Sheet Manager` é um sistema de fichas no sistema de Ordem Paranormal RPG v1.1, deve ser simples de usar esse projeto para criar, visualizar, editar e apagar as fichas de personagem.
+O `Hermes` é um sistema de fichas no sistema de Ordem Paranormal RPG v1.1, deve ser simples de usar esse projeto para criar, visualizar, editar e apagar as fichas de personagem.
 
 ## 🧾 Requisitos
 
