@@ -1,0 +1,78 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider          = "postgresql"
+  url               = env("DATABASE_URL")
+  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
+}
+
+model Character {
+  id String @id @default(uuid())
+
+  playerName              String @map("player_name")
+  characterName           String @map("character_name")
+  paranormalExposureLevel String @map("paranormal_exposure_level")
+  origin                  String
+  grade                   String
+  trail                   String
+  healthStatus            String
+
+  attributes CharacterAttributes[]
+  skills     CharacterSkills[]
+
+  createdAt DateTime  @default(now()) @map("created_at")
+  updatedAt DateTime? @map("updated_at")
+
+  @@map("characters")
+}
+
+model Attribute {
+  id String @id @default(uuid())
+
+  name        String
+  description String?
+
+  characters CharacterAttributes[]
+
+  @@map("attributes")
+}
+
+model CharacterAttributes {
+  Character   Character @relation(fields: [characterId], references: [id])
+  characterId String
+  Attribute   Attribute @relation(fields: [attributeId], references: [id])
+  attributeId String
+
+  value String?
+
+  @@id([characterId, attributeId])
+  @@map("character_attributes")
+}
+
+model Skill {
+  id String @id @default(uuid())
+
+  name        String
+  description String?
+
+  characters CharacterSkills[]
+
+  @@map("skills")
+}
+
+model CharacterSkills {
+  Character   Character @relation(fields: [characterId], references: [id])
+  characterId String
+  Skill       Skill     @relation(fields: [skillId], references: [id])
+  skillId     String
+
+  value String?
+
+  @@id([characterId, skillId])
+  @@map("character_skills")
+}
