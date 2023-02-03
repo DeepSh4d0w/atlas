@@ -1,3 +1,5 @@
+import { randomUUID } from 'crypto';
+
 export interface AttributeProps {
   name: string;
   byname?: string | null;
@@ -6,10 +8,16 @@ export interface AttributeProps {
 }
 
 export class Attribute {
+  private _id: string;
   private props: AttributeProps;
 
-  constructor(props: AttributeProps) {
+  constructor(props: AttributeProps, id?: string) {
     this.props = props;
+    this._id = id ?? randomUUID();
+  }
+
+  public get id() {
+    return this._id;
   }
 
   public get name() {
